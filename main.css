@@ -1,0 +1,169 @@
+body {
+    background-color: rgb(222, 222, 222);
+    display: flex;
+    /* justify-content: center; */
+    /* align-content: center; */
+    align-items: center;
+    height: 600px;
+    /* width: 100%; */
+}
+
+/* ------------------------------TOAST MESSAGE----------------------------------- */
+
+.toast + .toast {
+    margin-top: 24px;
+}
+
+.toast {
+    display: flex;
+    background-color: rgba(250 , 250, 250, 1);
+    align-items: center;
+    border-radius: 3px;
+    border-left: 5px solid;
+    padding: 12px 0px;
+    /* min-width: 400px; */
+    /* max-width: 450px; */
+    /* box-sizing: border-box; */
+    width: fit-content;
+    /* position: fixed;
+    top: 32px;
+    right: 32px; */
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+}
+
+#toast {
+    position: fixed;
+    top: 32px;  right: 32px;
+    z-index: 9999;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }    
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }    
+}
+
+:root {
+    --success-color: rgb(107, 238, 107);
+    --info-color: rgb(126, 198, 253);
+    --warning-color: rgb(255, 200, 97);
+    --error-color: rgb(249, 98, 98);
+}
+
+.toast--success {
+    border-color: var(--success-color);
+}
+.toast--success .toast__icon {
+    color: var(--success-color);
+}
+
+.toast--info {
+    border-color: var(--info-color);
+}
+.toast--info .toast__icon {
+    color: var(--info-color);
+}
+
+.toast--warning {
+    border-color: var(--warning-color);
+}
+.toast--warning .toast__icon {
+    color: var(--warning-color);
+}
+
+.toast--error {
+    border-color: var(--error-color);
+}
+.toast--error .toast__icon {
+    color: var(--error-color);
+}
+
+.toast__body {
+    min-width: 300px;
+    max-width: 350px;
+}
+
+.toast__title, .toast__msg {
+    margin: 0px;
+}
+
+.toast__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.toast__msg {
+    font-size: 14px;
+    color: #888;
+    margin-top: 4px;
+}
+
+.toast__icon, .toast__close {
+    padding: 0px 16px;
+}
+
+.toast__icon {
+    font-size: 24px;
+}
+
+.toast__close {   
+    /* padding-right: 0px; */
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+
+/* ---------------------------------------------------TOAST BUTTON--------------------------------------------------------------- */
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 400px;
+    justify-self: left;
+    /* width: 100%; */
+    margin-left: 100px;
+}
+
+.btn {
+    border: 2px solid;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    min-width: 150px;
+    text-align: center;
+}
+
+.btn--success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.btn--info {
+    background-color: var(--info-color);
+    border-color: var(--info-color);
+}
+
+.btn--warning {
+    background-color: var(--warning-color);
+    border-color: var(--warning-color);
+}
+.btn--error {
+    background-color: var(--error-color);
+    border-color: var(--error-color);
+}
